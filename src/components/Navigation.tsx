@@ -84,16 +84,18 @@ export function Navigation() {
 
       {/* Mobile Menu Overlay */}
       <div 
-        className={`md:hidden fixed inset-0 top-20 bg-surface dark:bg-surface-container transition-all duration-300 ease-in-out ${
+        className={`md:hidden fixed inset-0 pt-20 z-40 bg-surface/95 dark:bg-surface-container/95 backdrop-blur-md transition-all duration-300 ease-in-out ${
           isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
         }`}
       >
-        <div className="flex flex-col items-center justify-center h-full space-y-8 pb-20">
+        <div className="flex flex-col items-center justify-start pt-12 h-full space-y-6 px-6 overflow-y-auto">
           <Link
             href="/"
             onClick={closeMenu}
-            className={`font-headline-lg text-headline-lg uppercase tracking-widest ${
-              pathname === "/" ? "text-primary" : "text-secondary"
+            className={`w-full max-w-sm py-5 px-6 rounded-2xl border flex items-center justify-center font-headline-sm text-headline-sm uppercase tracking-widest transition-all ${
+              pathname === "/" 
+                ? "bg-primary text-on-primary border-primary shadow-lg" 
+                : "bg-surface-container text-primary border-outline-variant hover:border-primary/50"
             }`}
           >
             Collections
@@ -101,8 +103,10 @@ export function Navigation() {
           <Link
             href="/heritage"
             onClick={closeMenu}
-            className={`font-headline-lg text-headline-lg uppercase tracking-widest ${
-              pathname === "/heritage" ? "text-primary" : "text-secondary"
+            className={`w-full max-w-sm py-5 px-6 rounded-2xl border flex items-center justify-center font-headline-sm text-headline-sm uppercase tracking-widest transition-all ${
+              pathname === "/heritage" 
+                ? "bg-primary text-on-primary border-primary shadow-lg" 
+                : "bg-surface-container text-primary border-outline-variant hover:border-primary/50"
             }`}
           >
             Heritage
@@ -110,8 +114,10 @@ export function Navigation() {
           <Link
             href="/shop"
             onClick={closeMenu}
-            className={`font-headline-lg text-headline-lg uppercase tracking-widest ${
-              pathname === "/shop" ? "text-primary" : "text-secondary"
+            className={`w-full max-w-sm py-5 px-6 rounded-2xl border flex items-center justify-center font-headline-sm text-headline-sm uppercase tracking-widest transition-all ${
+              pathname === "/shop" 
+                ? "bg-primary text-on-primary border-primary shadow-lg" 
+                : "bg-surface-container text-primary border-outline-variant hover:border-primary/50"
             }`}
           >
             Shop
