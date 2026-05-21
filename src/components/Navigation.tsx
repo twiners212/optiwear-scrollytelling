@@ -15,6 +15,7 @@ export function Navigation() {
   const closeMenu = () => setIsMobileMenuOpen(false);
 
   return (
+    <>
     <nav className="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container/80 backdrop-blur-xl border-b border-outline-variant/30">
       <div className="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 max-w-container-max mx-auto relative z-50">
         <Link
@@ -81,49 +82,50 @@ export function Navigation() {
           </button>
         </div>
       </div>
-
-      {/* Mobile Menu Overlay */}
-      <div 
-        className={`md:hidden fixed inset-0 top-20 bg-surface/95 dark:bg-surface-container/95 backdrop-blur-md transition-all duration-300 ease-in-out ${
-          isMobileMenuOpen ? "opacity-100 visible pointer-events-auto" : "opacity-0 invisible pointer-events-none"
-        }`}
-      >
-        <div className="flex flex-col items-center justify-start pt-12 h-full space-y-6 px-6 overflow-y-auto pb-8">
-          <Link
-            href="/"
-            onClick={closeMenu}
-            className={`w-full max-w-sm py-5 px-6 rounded-2xl border flex items-center justify-center font-headline-sm text-headline-sm uppercase tracking-widest transition-all ${
-              pathname === "/" 
-                ? "bg-primary text-on-primary border-primary shadow-lg" 
-                : "bg-surface-container text-primary border-outline-variant hover:border-primary/50"
-            }`}
-          >
-            Collections
-          </Link>
-          <Link
-            href="/heritage"
-            onClick={closeMenu}
-            className={`w-full max-w-sm py-5 px-6 rounded-2xl border flex items-center justify-center font-headline-sm text-headline-sm uppercase tracking-widest transition-all ${
-              pathname === "/heritage" 
-                ? "bg-primary text-on-primary border-primary shadow-lg" 
-                : "bg-surface-container text-primary border-outline-variant hover:border-primary/50"
-            }`}
-          >
-            Heritage
-          </Link>
-          <Link
-            href="/shop"
-            onClick={closeMenu}
-            className={`w-full max-w-sm py-5 px-6 rounded-2xl border flex items-center justify-center font-headline-sm text-headline-sm uppercase tracking-widest transition-all ${
-              pathname === "/shop" 
-                ? "bg-primary text-on-primary border-primary shadow-lg" 
-                : "bg-surface-container text-primary border-outline-variant hover:border-primary/50"
-            }`}
-          >
-            Shop
-          </Link>
-        </div>
-      </div>
     </nav>
+
+    {/* Mobile Menu Overlay */}
+    <div 
+      className={`md:hidden fixed inset-0 top-20 z-40 bg-surface/95 dark:bg-surface-container/95 backdrop-blur-md transition-all duration-300 ease-in-out ${
+        isMobileMenuOpen ? "opacity-100 visible pointer-events-auto" : "opacity-0 invisible pointer-events-none"
+      }`}
+    >
+      <div className="flex flex-col items-center justify-start pt-12 h-full space-y-6 px-6 overflow-y-auto pb-8">
+        <Link
+          href="/"
+          onClick={closeMenu}
+          className={`w-full max-w-sm py-5 px-6 rounded-2xl border flex items-center justify-center font-headline-sm text-headline-sm uppercase tracking-widest transition-all ${
+            pathname === "/" 
+              ? "bg-primary text-on-primary border-primary shadow-lg" 
+              : "bg-surface-container text-primary border-outline-variant hover:border-primary/50"
+          }`}
+        >
+          Collections
+        </Link>
+        <Link
+          href="/heritage"
+          onClick={closeMenu}
+          className={`w-full max-w-sm py-5 px-6 rounded-2xl border flex items-center justify-center font-headline-sm text-headline-sm uppercase tracking-widest transition-all ${
+            pathname === "/heritage" 
+              ? "bg-primary text-on-primary border-primary shadow-lg" 
+              : "bg-surface-container text-primary border-outline-variant hover:border-primary/50"
+          }`}
+        >
+          Heritage
+        </Link>
+        <Link
+          href="/shop"
+          onClick={closeMenu}
+          className={`w-full max-w-sm py-5 px-6 rounded-2xl border flex items-center justify-center font-headline-sm text-headline-sm uppercase tracking-widest transition-all ${
+            pathname === "/shop" 
+              ? "bg-primary text-on-primary border-primary shadow-lg" 
+              : "bg-surface-container text-primary border-outline-variant hover:border-primary/50"
+          }`}
+        >
+          Shop
+        </Link>
+      </div>
+    </div>
+    </>
   );
 }
