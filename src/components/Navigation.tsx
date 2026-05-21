@@ -86,7 +86,7 @@ export function Navigation() {
 
     {/* Mobile Menu Overlay */}
     <div 
-      className={`md:hidden fixed inset-0 top-20 z-40 bg-surface/95 dark:bg-surface-container/95 backdrop-blur-md transition-all duration-300 ease-in-out ${
+      className={`md:hidden fixed inset-0 top-20 z-40 bg-surface/60 dark:bg-surface-container/60 backdrop-blur-xl transition-all duration-300 ease-in-out ${
         isMobileMenuOpen ? "opacity-100 visible pointer-events-auto" : "opacity-0 invisible pointer-events-none"
       }`}
     >
@@ -94,10 +94,10 @@ export function Navigation() {
         <Link
           href="/"
           onClick={closeMenu}
-          className={`w-full max-w-sm py-5 px-6 rounded-2xl border flex items-center justify-center font-headline-sm text-headline-sm uppercase tracking-widest transition-all ${
+          className={`w-full max-w-sm py-5 px-6 rounded-2xl border flex items-center justify-center font-headline-sm text-headline-sm uppercase tracking-widest transition-all backdrop-blur-md ${
             pathname === "/" 
-              ? "bg-primary text-on-primary border-primary shadow-lg" 
-              : "bg-surface-container text-primary border-outline-variant hover:border-primary/50"
+              ? "bg-primary/90 text-on-primary border-primary shadow-lg" 
+              : "bg-surface/40 dark:bg-surface-container/40 text-primary border-outline/30 hover:bg-surface/60 shadow-sm"
           }`}
         >
           Collections
@@ -105,10 +105,10 @@ export function Navigation() {
         <Link
           href="/heritage"
           onClick={closeMenu}
-          className={`w-full max-w-sm py-5 px-6 rounded-2xl border flex items-center justify-center font-headline-sm text-headline-sm uppercase tracking-widest transition-all ${
+          className={`w-full max-w-sm py-5 px-6 rounded-2xl border flex items-center justify-center font-headline-sm text-headline-sm uppercase tracking-widest transition-all backdrop-blur-md ${
             pathname === "/heritage" 
-              ? "bg-primary text-on-primary border-primary shadow-lg" 
-              : "bg-surface-container text-primary border-outline-variant hover:border-primary/50"
+              ? "bg-primary/90 text-on-primary border-primary shadow-lg" 
+              : "bg-surface/40 dark:bg-surface-container/40 text-primary border-outline/30 hover:bg-surface/60 shadow-sm"
           }`}
         >
           Heritage
@@ -116,10 +116,10 @@ export function Navigation() {
         <Link
           href="/shop"
           onClick={closeMenu}
-          className={`w-full max-w-sm py-5 px-6 rounded-2xl border flex items-center justify-center font-headline-sm text-headline-sm uppercase tracking-widest transition-all ${
+          className={`w-full max-w-sm py-5 px-6 rounded-2xl border flex items-center justify-center font-headline-sm text-headline-sm uppercase tracking-widest transition-all backdrop-blur-md ${
             pathname === "/shop" 
-              ? "bg-primary text-on-primary border-primary shadow-lg" 
-              : "bg-surface-container text-primary border-outline-variant hover:border-primary/50"
+              ? "bg-primary/90 text-on-primary border-primary shadow-lg" 
+              : "bg-surface/40 dark:bg-surface-container/40 text-primary border-outline/30 hover:bg-surface/60 shadow-sm"
           }`}
         >
           Shop

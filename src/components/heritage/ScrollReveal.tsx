@@ -28,7 +28,7 @@ export default function ScrollReveal({
     const isImage = variant === "image";
 
     if (isImage) {
-      gsap.set(el, { opacity: 0, clipPath: "inset(100% 0 0 0)" });
+      gsap.set(el, { opacity: 0, scale: 0.95 });
     } else {
       gsap.set(el, { opacity: 0, y: 20 });
     }
@@ -44,9 +44,9 @@ export default function ScrollReveal({
     if (isImage) {
       tl.to(el, {
         opacity: 1,
-        clipPath: "inset(0 0 0 0)",
+        scale: 1,
         duration: 1.2,
-        ease: "cubic-bezier(0.19, 1, 0.22, 1)",
+        ease: "power2.out",
         delay: delay / 1000,
       });
     } else {
