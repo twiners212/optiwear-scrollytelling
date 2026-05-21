@@ -16,7 +16,7 @@ export function Navigation() {
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container/80 backdrop-blur-xl border-b border-outline-variant/30">
-      <div className="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 max-w-container-max mx-auto relative z-50 bg-inherit">
+      <div className="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 max-w-container-max mx-auto relative z-50">
         <Link
           href="/"
           onClick={closeMenu}
@@ -84,11 +84,11 @@ export function Navigation() {
 
       {/* Mobile Menu Overlay */}
       <div 
-        className={`md:hidden fixed inset-0 pt-20 z-40 bg-surface/95 dark:bg-surface-container/95 backdrop-blur-md transition-all duration-300 ease-in-out ${
-          isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
+        className={`md:hidden fixed inset-0 top-20 bg-surface/95 dark:bg-surface-container/95 backdrop-blur-md transition-all duration-300 ease-in-out ${
+          isMobileMenuOpen ? "opacity-100 visible pointer-events-auto" : "opacity-0 invisible pointer-events-none"
         }`}
       >
-        <div className="flex flex-col items-center justify-start pt-12 h-full space-y-6 px-6 overflow-y-auto">
+        <div className="flex flex-col items-center justify-start pt-12 h-full space-y-6 px-6 overflow-y-auto pb-8">
           <Link
             href="/"
             onClick={closeMenu}
