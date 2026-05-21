@@ -1,5 +1,10 @@
 # OPTIWEAR — Precision Eyewear
 
+<div align="center">
+  <img src="./public/assets/images/heritage/hero_manifesto.png" alt="Optiwear Hero" width="100%" />
+  <p><em>A visually immersive scrollytelling experience</em></p>
+</div>
+
 A premium eyewear brand experience built with **Next.js 14**, **Tailwind CSS**, **GSAP**, and **Lenis** smooth scrolling.
 
 ![Next.js](https://img.shields.io/badge/Next.js-14.2-black?logo=nextdotjs)
@@ -73,4 +78,4 @@ src/
 
 ## License
 
-Private — All rights reserved.
+Distributed under the MIT License. See `LICENSE` for more information.
