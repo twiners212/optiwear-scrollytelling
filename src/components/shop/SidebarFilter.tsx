@@ -24,7 +24,7 @@ export function SidebarFilter({
   setMaxPrice,
 }: SidebarFilterProps) {
   return (
-    <aside className="w-full md:w-64 flex-shrink-0 pr-8 md:border-r border-outline-variant hidden md:block">
+    <aside className="w-full md:w-64 flex-shrink-0 md:pr-8 md:border-r border-outline-variant mb-12 md:mb-0">
       <div className="sticky top-32 space-y-10">
         <div>
           <h3 className="font-label-md text-label-md mb-4 uppercase tracking-widest text-primary border-b border-outline-variant pb-2">

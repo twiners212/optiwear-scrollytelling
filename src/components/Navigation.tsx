@@ -1,20 +1,25 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, ShoppingBag } from "lucide-react";
+import { Menu, X, ShoppingBag } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 
 export function Navigation() {
   const { items, setIsCartOpen } = useCart();
   const cartItemCount = items.reduce((sum, item) => sum + item.quantity, 0);
   const pathname = usePathname();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const closeMenu = () => setIsMobileMenuOpen(false);
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container/80 backdrop-blur-xl border-b border-outline-variant/30">
-      <div className="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 max-w-container-max mx-auto">
+      <div className="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 max-w-container-max mx-auto relative z-50 bg-inherit">
         <Link
           href="/"
+          onClick={closeMenu}
           className="font-headline-md text-headline-md tracking-tighter text-primary dark:text-on-primary-fixed"
         >
           OPTIWEAR
@@ -71,9 +76,46 @@ export function Navigation() {
               </span>
             )}
           </button>
-          <button className="text-primary">
-            <Menu className="w-6 h-6" />
+          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-primary transition-transform duration-300">
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      <div 
+        className={`md:hidden fixed inset-0 top-20 bg-surface dark:bg-surface-container transition-all duration-300 ease-in-out ${
+          isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
+        }`}
+      >
+        <div className="flex flex-col items-center justify-center h-full space-y-8 pb-20">
+          <Link
+            href="/"
+            onClick={closeMenu}
+            className={`font-headline-lg text-headline-lg uppercase tracking-widest ${
+              pathname === "/" ? "text-primary" : "text-secondary"
+            }`}
+          >
+            Collections
+          </Link>
+          <Link
+            href="/heritage"
+            onClick={closeMenu}
+            className={`font-headline-lg text-headline-lg uppercase tracking-widest ${
+              pathname === "/heritage" ? "text-primary" : "text-secondary"
+            }`}
+          >
+            Heritage
+          </Link>
+          <Link
+            href="/shop"
+            onClick={closeMenu}
+            className={`font-headline-lg text-headline-lg uppercase tracking-widest ${
+              pathname === "/shop" ? "text-primary" : "text-secondary"
+            }`}
+          >
+            Shop
+          </Link>
         </div>
       </div>
     </nav>
