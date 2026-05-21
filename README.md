@@ -3,6 +3,7 @@
 <div align="center">
   <img src="./public/assets/images/heritage/hero_manifesto.png" alt="Optiwear Hero" width="100%" />
   <p><em>A visually immersive scrollytelling experience</em></p>
+  <p><strong><a href="https://optiwear-scrollytelling.vercel.app/">🌟 View Live Demo</a></strong></p>
 </div>
 
 A premium eyewear brand experience built with **Next.js 14**, **Tailwind CSS**, **GSAP**, and **Lenis** smooth scrolling.
